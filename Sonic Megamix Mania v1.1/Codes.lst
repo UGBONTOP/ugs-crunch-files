@@ -1,0 +1,93 @@
+Patch "Remove Zone Lock (Megamix Mania)" Required
+writenop 00178DB4 13
+writenop 00090EC0 2
+writenop 0009F6E1 2
+writenop 000ED386 2
+writenop 000F2A40 2
+writenop 0001C4E2 2
+writenop 0010F681 2
+writenop 00176480 2
+writenop 0015FC44 2
+writenop 00146AAB 2
+writenop 00146560 2
+writenop 000DBBC1 2
+writenop 00173EE1 2
+writenop 00075924 2
+writenop 00101E41 2
+writenop 00112900 2
+writenop 000DE970 2
+writenop 00086707 2
+writenop 00160A10 2
+writenop 00156DC8 2
+writenop 0016CDD0 2
+writenop 000DC1E0 2
+writenop 000D81F2 2
+writenop 00148850 2
+writenop 000EC410 2
+writenop 000E4786 2
+writenop 00173196 2
+writenop 000E52D6 2
+writenop 000A3E66 2
+writenop 000E9461 2
+writenop 000EE6A0 2
+writenop 00067101 2
+writenop 000EECA1 2
+writenop 000EF4A1 2
+writenop 0000D2B0 2
+writenop 00147716 2
+writenop 0001FC82 2
+writenop 000D9780 2
+writenop 0000D2B0 2
+writenop 000EE6A0 2
+writenop 00067101 2
+writenop 0000CCE1 2
+writenop 00188291 2
+writenop 001A6541 2
+writenop 001121F0 2
+writenop 001A48C0 2
+writenop 00112D11 2
+writenop 0017B313 2
+writenop 000F09E1 2
+writenop 001A1B61 2
+writenop 000DB500 2
+writenop 00128AD1 2
+writenop 000D6154 2
+writenop 00170BD4 2
+writenop 00179360 2
+writenop 00191910 2
+writenop 000E74D0 2
+writenop 000EDBB0 2
+writenop 00024ED0 2
+writenop 00133912 6
+writenop 0018E900 6
+writenop 00173EE1 2
+writenop 0017B313 2
+writenop 0001C4E2 2
+writenop 001A2E92 2
+writenop 00088C50 2
+writenop 00134077 2
+writenop 000D0E64 2
+
+Code "Enable Max Control (Megamix Mania)" Required
+write8 p00AA763C|000410B4 0x0D
+
+Code "Disable Bonus Warps from Checkpoints (Megamix Mania)" Required
+write8 0005B3A7 0xEB
+
+Code "Disable P2 (Megamix Mania)" Required
+write8 p00AA763C|5 0
+
+Code "Super Forms Can Be Canceled (Megamix Mania)" Required
+ifeq8 00469B34 2
+	ifeq8 00469BD8 1
+		ifeq8 00441738 1
+			write8 00469B34 3
+		endif
+	endif
+	writenop 0005317A 2
+else
+	write16 0005317A 0x487D
+endif
+
+Code "Mania Hotfix (Megamix Mania)" Required
+write8 00A535D4 0

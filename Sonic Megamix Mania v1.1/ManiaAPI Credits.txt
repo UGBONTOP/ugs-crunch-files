@@ -1,0 +1,5 @@
+ManiaAPI Credits
+Lead Programmer & Project Management: SuperSonic16
+Reverse Engineering: CodenameGamma
+GITHUB:https://github.com/thesupersonic16/ManiaAPI 
+https://github.com/CodenameGamma
